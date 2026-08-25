@@ -21,7 +21,17 @@ A full-stack calculator application featuring a React/TypeScript frontend and a 
   - Clean idiomatic React (functional components, hooks) and Go code.
   - Unit tests provided for the backend logic (table-driven Go tests).
 
-## Setup & Running
+
+## Docker Setup & Running
+
+```bash 
+docker-compose up --build
+```
+
+*Vite will start the frontend on port `3000`. API requests to `/api/*` are automatically proxied to the Go backend 
+at `http://localhost:8080`.*
+
+## Local Setup & Running 
 
 You will need two terminal windows to run both the backend and frontend locally.
 
@@ -50,6 +60,11 @@ Run the Go unit tests with verbosity and coverage:
 ```bash
 cd backend-go
 go test -v ./...
+```
+
+To run tests with code coverage:
+```bash
+go test -v -cover ./...
 ```
 
 ## API Usage (REST)
